@@ -17,7 +17,7 @@ const ProductDetailsView: React.FC = () => {
   return (
     <>
       <MainMenuSection />
-      <BreadcrumbSection  currentPage={productContext.product.name} />
+      <BreadcrumbSection parentPage="Products"  currentPage={productContext.product.name} />
       <ProductDetailsSection item={productContext.product} />
       <FooterSection />
     </>

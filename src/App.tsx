@@ -1,4 +1,4 @@
-import './style.css'
+import './style.min.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import HomeView from './views/HomeView';
