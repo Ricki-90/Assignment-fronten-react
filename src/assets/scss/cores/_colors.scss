@@ -1,0 +1,12 @@
+.bg-theme {
+    background-color: $color-theme;
+}
+
+.bg-dark {
+    background-color: $color-dark !important;
+}
+
+.bg-gradient-gray {
+    background: $linear-gradient-dark;
+    background: linear-gradient(90deg, $linear-gradient-dark 0%, $linear-gradient-light 100%); 
+}

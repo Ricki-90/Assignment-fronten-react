@@ -1,0 +1,60 @@
+.flashsale-feature {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    .container {
+        display: flex;
+        margin-bottom: 70px;
+    }
+
+    .box-size {
+        width: 825px;
+        height: 665px;
+    }
+
+    .flashsale-box {
+        margin-top: 30px;
+        width: 825px;
+        height: 665px;
+        background-color: $color-gray;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .flashsales-title {
+            font-size: 45px;
+            font-weight: 600;
+            color: $color-white;
+            margin-bottom: 40px;
+        }
+
+        .btn-text {
+            font-weight: 600;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .product-grid {
+        .container {
+            max-width: 1110px;
+        }
+
+        .card-menu {
+            display: none;
+        }                
+    }
+}
+
+@media (max-width: 900px) {
+    .box-size {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .flashsale-feature {
+        display: none;
+    }
+}

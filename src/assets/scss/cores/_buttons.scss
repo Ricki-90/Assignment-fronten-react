@@ -1,0 +1,73 @@
+.btn-theme {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    background-color: $color-theme;
+    color: $color-white;
+    padding: 20px 50px;
+    transition: all 0,2 ease-in-out;
+    border: none;
+
+    .corner-left {
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        top: 10px;
+        left: 10px;
+        border-left: 1px solid $color-white;
+        border-top: 1px solid $color-white;
+    }
+    
+    .corner-right {
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        bottom: 10px;
+        right: 10px;
+        border-right: 1px solid $color-white;
+        border-bottom: 1px solid $color-white;
+    }
+
+    &:hover {
+        color: $color-white;
+        background-color: $color-dark;
+        text-decoration: none;
+    }
+}
+
+.btn-white {
+    position: relative;
+    width: 25%;
+    text-align: center;
+    background-color: $color-white;
+    color: $color-dark;
+    padding: 20px 50px;
+    transition: all 0,2 ease-in-out;
+    border: none;
+
+    .corner-left-w {
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        top: 10px;
+        left: 10px;
+        border-left: 1px solid $color-dark;
+        border-top: 1px solid $color-dark;
+    }
+
+    .corner-right-w {
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        bottom: 10px;
+        right: 10px;
+        border-right: 1px solid $color-dark;
+        border-bottom: 1px solid $color-dark;
+    }
+
+    &:hover {
+        color: $color-white;
+        background-color: $color-dark;
+        text-decoration: none;
+    }
+}

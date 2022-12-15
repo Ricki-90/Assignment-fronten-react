@@ -1,0 +1,24 @@
+//fonts
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+//cores
+@import "./cores/variables";
+@import "./cores/colors";
+@import "./cores/base";
+@import "./cores/buttons";
+
+//partials
+@import "./partials/shoppingcart";
+
+//section
+@import "./sections/MainMenuSection";
+@import "./sections/TopSection";
+@import "./sections/ProductGridSection";
+@import "./sections/BreadcrumbSection";
+@import "./sections/MapSection";
+@import "./sections/ContactFormSection";
+@import "./sections/FlashsaleSection";
+@import "./sections/SupportIconSection";
+@import "./sections/FooterSection";
+@import "./sections/BannerSection";
+@import "./sections/ProductDetailsSection";
