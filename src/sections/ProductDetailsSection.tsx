@@ -6,13 +6,14 @@ interface ProductTilesType {
 }
 
 const ProductDetailsSection: React.FC<ProductTilesType> = ({item}) => {
+
+    console.log(item)
     return (
         <section className="product-details">
             <div className="container">
                 <div>
                     <div>{item.name}</div>
                     <img src={item.imageName} />
-                    <img src={item.imageName}/>
                 </div>
             </div>
         </section>

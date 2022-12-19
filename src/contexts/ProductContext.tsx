@@ -33,6 +33,7 @@ const ProductProvider: React.FC<ProductProviderType> = ({children}) => {
     const [left, setLeft] = useState<ProductItem[]>([])
 
     const get = async (articleNumber?: string) => {
+        console.log(articleNumber)
         if  (articleNumber !== undefined) {        
         const res = await fetch (`${baseUrl}/product/details/${articleNumber}`)
         setProduct (await res.json())

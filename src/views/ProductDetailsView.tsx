@@ -7,7 +7,7 @@ import MainMenuSection from '../sections/MainMenuSection'
 import ProductDetailsSection from '../sections/ProductDetailsSection'
 
 const ProductDetailsView: React.FC = () => {
-  const {id} = useParams<string>()
+  const {id} = useParams()
   const productContext = useProductContext() as ProductContextType
 
   useEffect(() => {
