@@ -58,7 +58,7 @@ const ContactForm: React.FC = () => {
           setFailedSubmit(true)
         }
       }
-  }
+    }
 
   return (
     <section className="contact-form mt-5">
