@@ -7,7 +7,6 @@ interface ProductTilesType {
 
 const ProductDetailsSection: React.FC<ProductTilesType> = ({item}) => {
 
-    console.log(item)
     return (
         <section className="product-details">
             <div className="container">
