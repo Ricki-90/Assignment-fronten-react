@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom'
 import MenuIcon from '../components/MenuIcon'
 import { ShoppingCartContextType, useShoppingCartContext } from '../contexts/ShoppingCartContext'
 
-
 const MainMenuSection: React.FC = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false)
   const { totalQuantity } = useShoppingCartContext() as ShoppingCartContextType

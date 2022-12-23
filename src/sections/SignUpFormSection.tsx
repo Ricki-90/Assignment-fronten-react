@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import SignUpAlertNotification from '../components/SignUpAlertNotification'
+import FailedAlertNotificationUp from '../components/FailedAlertNotificationUp'
 import { validateEmail, validateText } from '../utilities/validation'
 
 interface userFromType {
@@ -9,8 +10,6 @@ interface userFromType {
   email: string
   password: string
 }
-
-
 
 const SignUpFormSection: React.FC = () => {
   const DEFALUT_VALUES: userFromType ={firstName: '', lastName: '', email: '', password: ''}
@@ -59,16 +58,15 @@ const SignUpFormSection: React.FC = () => {
           setSubmitted(false)
           setFailedSubmit(true)
         }
-      }
-    }  
+    }
+  }  
   
-
   return (
   <section className="contact-form mt-5">
     <div className="container">
 
-    { submitted ? (<SignUpAlertNotification alertType="success" title="Thanks you for your registration!" text="You will receive an email about verification."/>) : (<></>)}
-    { failedSubmit ? (<SignUpAlertNotification alertType="danger" title="Something went wrong!!" text="We couldn't register right now"/>) : (<></>)}
+      { submitted ? (<SignUpAlertNotification alertType="success" title="Thanks you for your registration!" text="You will receive an email about verification."/>) : (<></>)}
+      { failedSubmit ? (<FailedAlertNotificationUp alertType="danger" title="Something went wrong!!" text="We couldn't register right now"/>) : (<></>)}
 
       <h2>Register here</h2>
       <form onSubmit={handelSubmit}>

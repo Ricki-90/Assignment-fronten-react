@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import FailedAlertNotification from '../components/FailedAlertNotification'
+import FailedAlertNotificationIn from '../components/FailedAlertNotificationIn'
 import SignInAlertNotification from '../components/SignInAlertNotification'
 import { validateEmail, validateText } from '../utilities/validation'
 
@@ -9,7 +9,6 @@ interface userFromType {
   password: string
 }
 
-
 const SignInFormSection: React.FC = ()  => {
   const DEFALUT_VALUES: userFromType ={email: '', password: ''}
   const [formUser, setFormUser] = useState<userFromType>(DEFALUT_VALUES)
@@ -17,16 +16,16 @@ const SignInFormSection: React.FC = ()  => {
   const [submitted, setSubmitted] = useState<boolean>(false)
   const [failedSubmit, setFailedSubmit] = useState<boolean>(false)
   
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {id, value} = e.target
-    setFormUser({...formUser, [id]: value})
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const {id, value} = e.target
+      setFormUser({...formUser, [id]: value})
 
-    if (id === 'email')
-    setErrors({...errors, [id]: validateEmail(id, value)})
+      if (id === 'email')
+      setErrors({...errors, [id]: validateEmail(id, value)})
 
-    if (id === 'password')
-    setErrors({...errors, [id]: validateText(id, value)})
-  }
+      if (id === 'password')
+      setErrors({...errors, [id]: validateText(id, value)})
+    }
 
     const handelSubmit = async (e: React.FormEvent) => {
       e.preventDefault()
@@ -34,35 +33,35 @@ const SignInFormSection: React.FC = ()  => {
       setFailedSubmit(false)
 
 
-    const result = await fetch('http://localhost:5000/api/authentication/signin', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formUser)
-    })
+      const result = await fetch('http://localhost:5000/api/authentication/signin', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formUser)
+      })
 
-    const data = await result.json()
-    console.log(data)
-    localStorage.setItem('accessToken', data.accessToken)
+      const data = await result.json()
+      console.log(data)
+      localStorage.setItem('accessToken', data.accessToken)
 
 
-    if (result.status === 200) {
-      setSubmitted(true)
-      setFormUser(DEFALUT_VALUES)
-    } else {
-      setSubmitted(false)
-      setFailedSubmit(true)
+      if (result.status === 200) {
+        setSubmitted(true)
+        setFormUser(DEFALUT_VALUES)
+      } else {
+        setSubmitted(false)
+        setFailedSubmit(true)
+      }
     }
-  }
 
   return (
-  <section className="contact-form mt-5">
+  <section className="contact-form mt-5 Page-xl">
     <div className="container">
 
       { submitted ? (<SignInAlertNotification alertType="success" title="Welcome in!" text=" "/>) : (<></>)}
-      { failedSubmit ? (<FailedAlertNotification alertType="danger" title="Something went wrong!" text="We can't log you in"/>) : (<></>)}
-
+      { failedSubmit ? (<FailedAlertNotificationIn alertType="danger" title="Something went wrong!" text="We can't log you in"/>) : (<></>)}
+      
       <h2>Sign in here</h2>
       <form onSubmit={handelSubmit}>
         <div>
